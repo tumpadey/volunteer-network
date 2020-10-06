@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 
 const VolunteerEvents = () => {
 
-    const  { id }= useParams();
+    const {id}  = useParams();
    
 
    const [events, setEvents] = useState(fakeData)

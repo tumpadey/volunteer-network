@@ -27,7 +27,7 @@ function App() {
 
       </Route>
 
-      <PrivateRoute path="/eventRegistration/:_id">
+      <PrivateRoute path="/eventRegistration/:id">
         <EventRegistration />
       </PrivateRoute>
 

@@ -9,7 +9,7 @@ const EventRegistration = () => {
       const [loggedInUser, setLoggedInUser] = useContext(UserContext);
      
       const handleSelectedEvent = () => {
-        const newEvent = { ...loggedInUser };
+        const newEvent = { ...loggedInUser, ...setLoggedInUser };
         fetch('http://localhost:5000/registrationEvent', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import {UserContext} from '../../App';
+import { Button, Container, Row } from 'react-bootstrap';
 import './Login.css';
 import logo from '../../logos/logo.png';
+import googleIcon from '../../logos/google.png';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
 
-import { useHistory, useLocation } from 'react-router-dom';
+import {Link, useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
 
@@ -33,23 +35,36 @@ const Login = () => {
     }
     
     return (
-        <div className="container event-registration">
-             <a href="/home"><img src={logo} alt="" className="form-logo" /></a>
-
-             <div className="login-form bg-white">
-                <div className="mt-5">
-                <h3>Login with</h3>
-                    <button
-                        onClick={handleGoogleSignIn}
-                        type="submit"
-                        className="btn btn-outline-success col-md-12 ">Continue With Google
-                    </button>
-                    <p className="mt-3">Don't have an account?
-                    <a href="#"> create an account.</a>
-                    </p>
-                </div>
+        <Container className="text-center">
+        <Link to="/home"><img className="mt-5" src={logo} alt="" /></Link>
+        <Row className="justify-content-md-center mt-3">
+            <div className="login-card mt-5">
+                <h3>Login With</h3>
+                <Button onClick={handleGoogleSignIn} variant="light"><img src={googleIcon} alt="" /> Continue with Google</Button>
+                <p>Don't have an account? <a href="https://accounts.google.com/signup?hl=en" target="blank">Create an account.</a></p>
             </div>
-        </div>
+        </Row>
+    </Container>
+
+
+
+        // <div className="container event-registration">
+        //      <a href="/home"><img src={logo} alt="" className="form-logo" /></a>
+
+        //      <div className="login-form bg-white">
+        //         <div className="mt-5">
+        //         <h3>Login with</h3>
+        //             <button
+        //                 onClick={handleGoogleSignIn}
+        //                 type="submit"
+        //                 className="btn btn-outline-success col-md-12 ">Continue With Google
+        //             </button>
+        //             <p className="mt-3">Don't have an account?
+        //             <a href="#"> create an account.</a>
+        //             </p>
+        //         </div>
+        //     </div>
+        // </div>
     );
 };
 

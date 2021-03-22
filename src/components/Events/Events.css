@@ -1,0 +1,16 @@
+.card-style{
+    height: 320px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    text-align: center;
+}
+.card-style img{
+    height: 250px;
+}
+.card-style:hover{
+    cursor: pointer;
+}
+.card-style:active{
+    border: 2px solid black;
+}

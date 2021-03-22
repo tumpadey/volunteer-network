@@ -1,21 +1,20 @@
-.volunteer-login{
-    text-align: center;
-    margin-top: 50px;
-    
+  
+.login-card{
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 120px;
 }
-
-.form-logo{
-    
-    width: 300px;
-    height: 80px;
-} 
-
-.login-form {
-    border: 1px solid lightgrey;
-    padding: 40px;
-    width: 500px;
-    height: 400px;
-    margin: 0 auto;
-    margin-top: 20px; 
-    
+.login-card h3{
+    font-weight: 700;
+}
+.login-card button{
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px 0 10px 0;
+}
+.login-card button img{
+    height: 30px;
 }

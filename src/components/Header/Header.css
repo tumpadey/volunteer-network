@@ -1,17 +1,14 @@
-.navbar-brand img{
-    width: 200px;
-    height: 60px;
-    
+img{
+    height: 50px;
 }
- .container  {
-    
-    font-weight: bold;
+.header-nav{
+    font-size: 20px;
+    font-weight: 600;
 }
-.nav-item {
-    margin-right: 40px;
-
+.header-nav button{
+    font-size: 20px;
+    font-weight: 600;
 }
-
-
-
-
+.search-bar{
+    width: 500px;
+}

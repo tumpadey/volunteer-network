@@ -15,20 +15,23 @@ const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
+
     const { from } = location.state || { from: { pathname: "/" } };
 
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
     }
 
-    const handleGoogleSignIn = () => {
+    const handleGoogle = () => {
         var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function (result) {
+        firebase.auth().signInWithPopup(provider)
+        .then (result=> {
             const { displayName, email } = result.user;
             const signedInUser = { name: displayName, email }
             setLoggedInUser(signedInUser);
             history.replace(from);
-        }).catch(function (error) {
+        })
+        .catch (error => {
             const errorMessage = error.message;
             console.log(errorMessage);
         });
@@ -40,7 +43,7 @@ const Login = () => {
         <Row className="justify-content-md-center mt-3">
             <div className="login-card mt-5">
                 <h3>Login With</h3>
-                <Button onClick={handleGoogleSignIn} variant="light"><img src={googleIcon} alt="" /> Continue with Google</Button>
+                <Button onClick={handleGoogle} variant="light"><img src={googleIcon} alt="" /> Continue with Google</Button>
                 <p>Don't have an account? <a href="https://accounts.google.com/signup?hl=en" target="blank">Create an account.</a></p>
             </div>
         </Row>
